@@ -1,3 +1,68 @@
 // Place all the styles related to the Maps controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+html {
+    position: relative;
+}
+
+.image-container {
+}
+
+.map {
+    width: 100%;
+    height: auto;
+    cursor: crosshair;
+    object-fit: contain;
+}
+
+.target-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px dashed red;
+    position: absolute;
+}
+
+.drop-box {
+    position: absolute;
+    background-color: rgba(220,220,220, 0.7);
+}
+
+.drop-box-card {
+    display: grid;
+    grid-template-columns: 50px 120px;
+    grid-gap: 10px;
+    padding: 10px;
+    align-items: center;
+}
+
+.card-image-wrapper {
+    position: relative;
+    border-radius: 50%;
+    height: 50px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.card-description {
+    font-weight: 700;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.magikarp {
+    position: absolute;
+    left: -5px;
+    top: -10px;
+}
+
+.porygon {
+    position: absolute;
+    top: -5px;
+}
+
+.togepi {
+    position: absolute;
+    top: 3px;
+}
