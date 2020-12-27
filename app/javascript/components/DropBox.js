@@ -14,13 +14,25 @@ function DropBox(props) {
     <div className="drop-box" style={coordsStyle}>
       <ul>
         <li>
-          <DropBoxCard cardImage={MagikarpImage} cardDescription="magikarp" />
+          <DropBoxCard
+            cardImage={MagikarpImage}
+            cardDescription="magikarp"
+            checkPosition={props.checkPosition}
+          />
         </li>
         <li>
-          <DropBoxCard cardImage={PorygonImage} cardDescription="porygon" />
+          <DropBoxCard
+            cardImage={PorygonImage}
+            cardDescription="porygon"
+            checkPosition={props.checkPosition}
+          />
         </li>
         <li>
-          <DropBoxCard cardImage={TogepiImage} cardDescription="togepi" />
+          <DropBoxCard
+            cardImage={TogepiImage}
+            cardDescription="togepi"
+            checkPosition={props.checkPosition}
+          />
         </li>
       </ul>
     </div>
