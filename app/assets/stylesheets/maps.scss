@@ -66,10 +66,13 @@ html {
 
 .pop-up {
   position: absolute;
+  top: 10%;
+  left: calc(50% - 100px);
   background-color: #fff;
   opacity: 0;
   padding: 3px;
-  max-width: 200px;
+  max-width: 300px;
+  font-size: 18px;
   font-weight: 700;
   line-height: 1.25;
   border-radius: 5px;
