@@ -1,4 +1,5 @@
 import React from "react";
+import { capitalise } from "../util";
 
 function DropBoxCard(props) {
   let { cardImage, cardDescription, checkPosition } = props;
@@ -12,7 +13,7 @@ function DropBoxCard(props) {
       <div className="card-image-wrapper">
         <img className={cardDescription} src={cardImage} />
       </div>
-      <div className="card-description">{cardDescription.toUpperCase()}</div>
+      <div className="card-description">{capitalise(cardDescription)}</div>
     </div>
   );
 }

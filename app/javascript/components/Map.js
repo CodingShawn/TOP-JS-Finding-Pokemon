@@ -3,6 +3,7 @@ import { useState } from "react";
 import pokeImg from "../../assets/images/pokemon.png";
 import TargetBox from "./TargetBox";
 import DropBox from "./DropBox";
+import { capitalise } from "../util";
 
 let Map = () => {
   let [ifTargeted, setIfTargeted] = useState(false);
@@ -46,7 +47,7 @@ let Map = () => {
       "background-color: rgba(170,170,170, 0.9)"
     );
     myStyleSheet.addRule("#" + pokemon + "-card", "color: rgb(160, 160, 160)");
-    let popUpText = `You found ${pokemon}!`;
+    let popUpText = `You found ${capitalise(pokemon)}!`;
     showPopUp(popUpText, true);
   }
 
