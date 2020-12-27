@@ -32,21 +32,22 @@ let Map = () => {
     let response = await fetch(urlRequest);
     let isFoundStatus = await response.json();
     if (isFoundStatus.checkStatus) {
-      let myStyleSheet = document.styleSheets[0];
-      myStyleSheet.addRule(
-        "#" + pokemon + "-card",
-        "background-color: rgba(170,170,170, 0.9)"
-      );
-      myStyleSheet.addRule(
-        "#" + pokemon + "-card",
-        "color: rgb(160, 160, 160)"
-      );
-      let popUpText = `You found ${pokemon}!`
-      showPopUp(popUpText, true)
+      addFoundPokemonChanges(pokemon);
     } else {
       let popUpText = "Opps! That doesn't seem like the right Pokemon";
-      showPopUp(popUpText, false)
+      showPopUp(popUpText, false);
     }
+  }
+
+  function addFoundPokemonChanges(pokemon) {
+    let myStyleSheet = document.styleSheets[0];
+    myStyleSheet.addRule(
+      "#" + pokemon + "-card",
+      "background-color: rgba(170,170,170, 0.9)"
+    );
+    myStyleSheet.addRule("#" + pokemon + "-card", "color: rgb(160, 160, 160)");
+    let popUpText = `You found ${pokemon}!`;
+    showPopUp(popUpText, true);
   }
 
   function showPopUp(popUpText, isFound) {
