@@ -3,66 +3,85 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 html {
-    position: relative;
-}
-
-.image-container {
+  position: relative;
 }
 
 .map {
-    width: 100%;
-    height: auto;
-    cursor: crosshair;
-    object-fit: contain;
+  width: 100%;
+  height: auto;
+  cursor: crosshair;
+  object-fit: contain;
 }
 
 .target-box {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 2px dashed red;
-    position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px dashed red;
+  position: absolute;
 }
 
 .drop-box {
-    position: absolute;
-    background-color: rgba(220,220,220, 0.7);
+  position: absolute;
+  background-color: rgba(220, 220, 220, 0.7);
 }
 
 .drop-box-card {
-    display: grid;
-    grid-template-columns: 50px 120px;
-    grid-gap: 10px;
-    padding: 10px;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 50px 120px;
+  grid-gap: 10px;
+  padding: 10px;
+  align-items: center;
 }
 
 .card-image-wrapper {
-    position: relative;
-    border-radius: 50%;
-    height: 50px;
-    overflow: hidden;
-    object-fit: cover;
+  position: relative;
+  border-radius: 50%;
+  height: 50px;
+  overflow: hidden;
+  object-fit: cover;
 }
 
 .card-description {
-    font-weight: 700;
-    font-size: 20px;
-    padding: 10px;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 10px;
 }
 
 .magikarp {
-    position: absolute;
-    left: -5px;
-    top: -10px;
+  position: absolute;
+  left: -5px;
+  top: -10px;
 }
 
 .porygon {
-    position: absolute;
-    top: -5px;
+  position: absolute;
+  top: -5px;
 }
 
 .togepi {
-    position: absolute;
-    top: 3px;
+  position: absolute;
+  top: 3px;
+}
+
+.pop-up {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 3px;
+  max-width: 200px;
+  font-weight: 700;
+  line-height: 1.25;
+  border-radius: 5px;
+}
+
+.found {
+  display: block !important;
+  color: #198754;
+  border: 1px dashed #198754;
+}
+
+.not-found {
+  display: block !important;
+  color: #dc3545;
+  border: 1px dashed #dc3545;
 }

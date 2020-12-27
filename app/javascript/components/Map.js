@@ -3,6 +3,7 @@ import { useState } from "react";
 import pokeImg from "../../assets/images/pokemon.png";
 import TargetBox from "./TargetBox";
 import DropBox from "./DropBox";
+import PopUp from "./PopUp"
 
 let Map = () => {
   let [ifTargeted, setIfTargeted] = useState(false);
@@ -29,8 +30,8 @@ let Map = () => {
 
   async function sendCheckRequest(urlRequest, pokemon) {
     let response = await fetch(urlRequest);
-    let ifFoundStatus = await response.json();
-    if (ifFoundStatus.checkStatus) {
+    let isFoundStatus = await response.json();
+    if (isFoundStatus.checkStatus) {
       let myStyleSheet = document.styleSheets[0];
       myStyleSheet.addRule(
         "#" + pokemon + "-card",
@@ -40,12 +41,24 @@ let Map = () => {
         "#" + pokemon + "-card",
         "color: rgb(160, 160, 160)"
       );
+      let popUpText = `You found ${pokemon}!`
+      showPopUp(popUpText, true)
+    } else {
+      let popUpText = "Opps! That doesn't seem like the right Pokemon";
+      showPopUp(popUpText, false)
     }
+  }
+
+  function showPopUp(popUpText, isFound) {
+    let popUp = document.querySelector(".pop-up");
+    isFound ? popUp.classList.add("found") : popUp.classList.add("not-found")
+    popUp.textContent = popUpText;
   }
 
   return (
     <div className="image-container">
       <img className="map" src={pokeImg} onClick={placeTargetBox} />
+      {ifTargeted && <PopUp targetBoxCoords={targetBoxCoords} />}
       {ifTargeted && <TargetBox targetBoxCoords={targetBoxCoords} />}
       {ifTargeted && (
         <DropBox
