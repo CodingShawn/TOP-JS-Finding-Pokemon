@@ -3,11 +3,11 @@ import { useState } from "react";
 import pokeImg from "../../assets/images/pokemon.png";
 import TargetBox from "./TargetBox";
 import DropBox from "./DropBox";
-import PopUp from "./PopUp"
 
 let Map = () => {
   let [ifTargeted, setIfTargeted] = useState(false);
   let [targetBoxCoords, setTargetBoxCoords] = useState(null);
+  let popUp = document.querySelector(".pop-up");
 
   function placeTargetBox(event) {
     const { pageX, pageY } = event;
@@ -50,15 +50,28 @@ let Map = () => {
   }
 
   function showPopUp(popUpText, isFound) {
-    let popUp = document.querySelector(".pop-up");
-    isFound ? popUp.classList.add("found") : popUp.classList.add("not-found")
     popUp.textContent = popUpText;
+    if (isFound) {
+      popUp.classList.add("found");
+      setTimeout(removeFoundClass, 2000);
+    } else {
+      popUp.classList.add("not-found");
+      setTimeout(removeNotFoundClass, 2000);
+    }
+    setIfTargeted(false);
+  }
+
+  function removeFoundClass() {
+    popUp.classList.remove("found");
+  }
+
+  function removeNotFoundClass() {
+    popUp.classList.remove("not-found");
   }
 
   return (
     <div className="image-container">
       <img className="map" src={pokeImg} onClick={placeTargetBox} />
-      {ifTargeted && <PopUp targetBoxCoords={targetBoxCoords} />}
       {ifTargeted && <TargetBox targetBoxCoords={targetBoxCoords} />}
       {ifTargeted && (
         <DropBox
