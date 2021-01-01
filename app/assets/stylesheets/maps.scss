@@ -65,7 +65,7 @@ html {
 }
 
 .pop-up {
-  position: absolute;
+  position: fixed;
   top: 10%;
   left: calc(50% - 100px);
   background-color: #fff;
@@ -93,8 +93,13 @@ html {
   animation: fade 2s linear;
 }
 
-
 @keyframes fade {
-    0%, 100% {opacity: 0;}
-    15%, 85% {opacity: 0.9;}
+  0%,
+  100% {
+    opacity: 0;
   }
+  15%,
+  85% {
+    opacity: 0.9;
+  }
+}
