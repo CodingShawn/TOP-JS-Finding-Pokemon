@@ -48,3 +48,44 @@ body {
 .hidden {
   display: none;
 }
+
+.centering-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 15%;
+}
+
+.congrats-wrapper {
+  position: relative;
+  width: fit-content;
+  text-align: center;
+  left: -50%;
+  grid-template-columns: repeat(2, 200px);
+  background-color: rgba(220, 220, 220, 0.7);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  font-size: 26px;
+}
+
+.congrats-wrapper > * {
+  padding-top: 20px;
+}
+
+.congrats-wrapper h1 {
+  font-size: 40px;
+}
+
+.congrats-wrapper form input {
+  margin: 20px;
+  line-height: 20px;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+form button {
+  padding: 5px;
+  font-size: 20px;
+}
