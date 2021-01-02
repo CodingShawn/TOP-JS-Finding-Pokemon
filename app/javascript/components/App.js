@@ -21,10 +21,10 @@ function App() {
   return (
     <React.Fragment>
       <div className="container">
-        <Navbar numFound={numFound} currentTime={currentTime}/>
-        <CongratsPopUp />
+        <Navbar numFound={numFound} currentTime={currentTime} />
         <PopUp />
         <Map reduceCounter={reduceCounter} />
+        <CongratsPopUp currentTime={currentTime} />
       </div>
     </React.Fragment>
   );
