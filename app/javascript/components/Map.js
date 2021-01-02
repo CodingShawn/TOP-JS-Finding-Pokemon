@@ -8,6 +8,11 @@ import { capitalise } from "../util";
 let Map = (props) => {
   let [ifTargeted, setIfTargeted] = useState(false);
   let [targetBoxCoords, setTargetBoxCoords] = useState(null);
+  let [pokemonFoundStatus, setPokemonFoundStatus] = useState({
+    magikarp: false,
+    porygon: false,
+    togepi: false,
+  });
   let popUp = document.querySelector(".pop-up");
 
   function placeTargetBox(event) {
@@ -20,13 +25,17 @@ let Map = (props) => {
   }
 
   function checkPosition(pokemon) {
-    let mapImage = document.querySelector(".map");
-    let mapWidth = mapImage.width;
-    let mapHeight = mapImage.height;
-    let xPercent = (targetBoxCoords[0] / mapWidth) * 100;
-    let yPercent = (targetBoxCoords[1] / mapHeight) * 100;
-    let urlRequest = `/maps/check${pokemon}?x=${xPercent}&y=${yPercent}`;
-    sendCheckRequest(urlRequest, pokemon);
+    if (pokemonFoundStatus[pokemon]) {
+      ifPokemonFoundAlready(pokemon);
+    } else {
+      let mapImage = document.querySelector(".map");
+      let mapWidth = mapImage.width;
+      let mapHeight = mapImage.height;
+      let xPercent = (targetBoxCoords[0] / mapWidth) * 100;
+      let yPercent = (targetBoxCoords[1] / mapHeight) * 100;
+      let urlRequest = `/maps/check${pokemon}?x=${xPercent}&y=${yPercent}`;
+      sendCheckRequest(urlRequest, pokemon);
+    }
   }
 
   async function sendCheckRequest(urlRequest, pokemon) {
@@ -50,6 +59,7 @@ let Map = (props) => {
     let popUpText = `You found ${capitalise(pokemon)}!`;
     showPopUp(popUpText, true);
     props.reduceCounter();
+    setPokemonToFound(pokemon)
   }
 
   function showPopUp(popUpText, isFound) {
@@ -70,6 +80,15 @@ let Map = (props) => {
 
   function removeNotFoundClass() {
     popUp.classList.remove("not-found");
+  }
+
+  function ifPokemonFoundAlready(pokemon) {
+    let popUpText = `You already found ${capitalise(pokemon)}!`;
+    showPopUp(popUpText, false);
+  }
+
+  function setPokemonToFound(pokemon) {
+    setPokemonFoundStatus({ ...pokemonFoundStatus, [pokemon]: true });
   }
 
   return (
