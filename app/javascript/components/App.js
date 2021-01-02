@@ -1,20 +1,24 @@
-import React from "react"
+import React, { useState } from "react"
 import Navbar from "./Navbar"
 import Map from "./Map"
 import PopUp from "./PopUp";
 
-class App extends React.Component {
-  render () {
+function App() {
+  let [numFound, setNumFound] = useState(3);
+
+  function reduceCounter() {
+    setNumFound(numFound - 1);
+  }
+
     return (
       <React.Fragment>
         <div className="container">
-          <Navbar/>
+          <Navbar numFound={numFound}/>
           <PopUp/>
-          <Map/>
+          <Map reduceCounter={reduceCounter}/>
         </div>
       </React.Fragment>
     );
-  }
 }
 
 export default App

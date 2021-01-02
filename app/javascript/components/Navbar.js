@@ -1,9 +1,11 @@
 import React from 'react'
+import Timer from './Timer'
 
 let Navbar = (props) => {
   return (
     <div className="navbar">
-      Nav
+      <div className="counter">{props.numFound}</div>
+      <Timer/>
     </div>
   )
 }

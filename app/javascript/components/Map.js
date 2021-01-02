@@ -5,7 +5,7 @@ import TargetBox from "./TargetBox";
 import DropBox from "./DropBox";
 import { capitalise } from "../util";
 
-let Map = () => {
+let Map = (props) => {
   let [ifTargeted, setIfTargeted] = useState(false);
   let [targetBoxCoords, setTargetBoxCoords] = useState(null);
   let popUp = document.querySelector(".pop-up");
@@ -49,6 +49,7 @@ let Map = () => {
     myStyleSheet.addRule("#" + pokemon + "-card", "color: rgb(160, 160, 160)");
     let popUpText = `You found ${capitalise(pokemon)}!`;
     showPopUp(popUpText, true);
+    props.reduceCounter();
   }
 
   function showPopUp(popUpText, isFound) {
