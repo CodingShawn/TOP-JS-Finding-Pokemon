@@ -59,7 +59,7 @@ let Map = (props) => {
     let popUpText = `You found ${capitalise(pokemon)}!`;
     showPopUp(popUpText, true);
     props.reduceCounter();
-    setPokemonToFound(pokemon)
+    setPokemonToFound(pokemon);
   }
 
   function showPopUp(popUpText, isFound) {
@@ -94,8 +94,10 @@ let Map = (props) => {
   return (
     <div className="image-container">
       <img className="map" src={pokeImg} onClick={placeTargetBox} />
-      {ifTargeted && <TargetBox targetBoxCoords={targetBoxCoords} />}
-      {ifTargeted && (
+      {props.numFound !== 0 && ifTargeted && (
+        <TargetBox targetBoxCoords={targetBoxCoords} />
+      )}
+      {props.numFound !== 0 && ifTargeted && (
         <DropBox
           targetBoxCoords={targetBoxCoords}
           checkPosition={checkPosition}
