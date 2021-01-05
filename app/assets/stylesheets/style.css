@@ -1,9 +1,6 @@
-:root {
-  --nav-height: 100px;
-}
-
 * {
   box-sizing: border-box;
+  font-family: 'Lobster', cursive;
 }
 
 body {
@@ -23,7 +20,7 @@ body {
   display: flex;
   justify-content: flex-end;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .counter {
@@ -50,7 +47,7 @@ body {
 }
 
 .centering-wrapper {
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 15%;
 }
@@ -66,7 +63,9 @@ body {
   display: flex;
   flex-direction: column;
   font-weight: 700;
-  font-size: 26px;
+  font-size: 24px;
+  line-height: 1.75em;
+  padding: 10px;
 }
 
 .congrats-wrapper > * {
@@ -75,6 +74,11 @@ body {
 
 .congrats-wrapper h1 {
   font-size: 40px;
+}
+
+.congrats-wrapper h2 {
+  text-decoration: underline;
+  font-size: 36px;
 }
 
 .congrats-wrapper form input {
@@ -93,7 +97,7 @@ form button {
 .top-scorer-wrapper {
   margin-left: 100px;
   margin-right: 100px;
-  font-size: 30px;
+  font-size: 24px;
   padding-bottom: 20px;
 }
 
@@ -105,4 +109,8 @@ form button {
   display: flex;
   justify-content: space-between;
   padding: 5px;
+}
+
+.top-scorer div {
+  font-family: 'Roboto', sans-serif;  
 }
