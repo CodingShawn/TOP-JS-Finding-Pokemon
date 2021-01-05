@@ -14,7 +14,9 @@ function App() {
   let [currentTime, setCurrentTime] = useState(0);
 
   useEffect(() => {
-    let timer = setInterval(() => setCurrentTime(currentTime + 1), 1000);
+    if (numFound !== 0) {
+      var timer = setInterval(() => setCurrentTime(currentTime + 1), 1000);
+    }
     return () => clearInterval(timer);
   });
 
@@ -22,9 +24,9 @@ function App() {
     <React.Fragment>
       <div className="container">
         <Navbar numFound={numFound} currentTime={currentTime} />
+        {numFound == 0 && <CongratsPopUp currentTime={currentTime} />}
         <PopUp />
-        <Map reduceCounter={reduceCounter} />
-        <CongratsPopUp currentTime={currentTime} />
+        <Map reduceCounter={reduceCounter} numFound={numFound} />
       </div>
     </React.Fragment>
   );
