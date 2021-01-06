@@ -6,9 +6,10 @@ import TogepiImage from "../../assets/images/Togepi.png";
 
 function DropBox(props) {
   let [xCoords, yCoords] = props.targetBoxCoords;
+  let offset = props.offset;
   let coordsStyle = {
-    top: yCoords + "px",
-    left: xCoords + 65 + "px",
+    top: yCoords - offset + "px",
+    left: xCoords + 65 - offset + "px",
   };
   return (
     <div className="drop-box" style={coordsStyle}>

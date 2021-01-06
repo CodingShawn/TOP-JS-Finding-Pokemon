@@ -17,11 +17,8 @@ let Map = (props) => {
 
   function placeTargetBox(event) {
     const { pageX, pageY } = event;
-    let offset = 25;
-    let xCoords = pageX - offset;
-    let yCoords = pageY - offset;
     setIfTargeted(!ifTargeted);
-    setTargetBoxCoords([xCoords, yCoords]);
+    setTargetBoxCoords([pageX, pageY]);
   }
 
   function checkPosition(pokemon) {
@@ -95,12 +92,13 @@ let Map = (props) => {
     <div className="image-container">
       <img className="map" src={pokeImg} onClick={placeTargetBox} />
       {props.numFound !== 0 && ifTargeted && (
-        <TargetBox targetBoxCoords={targetBoxCoords} />
+        <TargetBox targetBoxCoords={targetBoxCoords} offset="25"/>
       )}
       {props.numFound !== 0 && ifTargeted && (
         <DropBox
           targetBoxCoords={targetBoxCoords}
           checkPosition={checkPosition}
+          offset="25"
         />
       )}
     </div>
