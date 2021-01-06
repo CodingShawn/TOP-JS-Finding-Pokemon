@@ -13,12 +13,31 @@ let Map = (props) => {
     porygon: false,
     togepi: false,
   });
+  let [dropBoxXOffset, setDropBoxXOffset] = useState(null);
+  let [dropBoxYOffset, setDropBoxYOffset] = useState(null);
+
   let popUp = document.querySelector(".pop-up");
 
   function placeTargetBox(event) {
     const { pageX, pageY } = event;
+    setOffset(pageX, pageY, event);
     setIfTargeted(!ifTargeted);
     setTargetBoxCoords([pageX, pageY]);
+  }
+
+  function setOffset(pageX, pageY, event) {
+    var horizontalOffset;
+    var verticalOffset = -25;
+    if (pageX + 300 > event.target.width) {
+      horizontalOffset = -250;
+    } else {
+      horizontalOffset = 40;
+    }
+    if (pageY + 300 > event.target.height) {
+      verticalOffset = -185;
+    }
+    setDropBoxXOffset(horizontalOffset);
+    setDropBoxYOffset(verticalOffset);
   }
 
   function checkPosition(pokemon) {
@@ -92,13 +111,14 @@ let Map = (props) => {
     <div className="image-container">
       <img className="map" src={pokeImg} onClick={placeTargetBox} />
       {props.numFound !== 0 && ifTargeted && (
-        <TargetBox targetBoxCoords={targetBoxCoords} offset="25"/>
+        <TargetBox targetBoxCoords={targetBoxCoords} offset="25" />
       )}
       {props.numFound !== 0 && ifTargeted && (
         <DropBox
           targetBoxCoords={targetBoxCoords}
           checkPosition={checkPosition}
-          offset="25"
+          xOffset={dropBoxXOffset}
+          yOffset={dropBoxYOffset}
         />
       )}
     </div>
