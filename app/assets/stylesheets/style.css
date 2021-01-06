@@ -18,9 +18,20 @@ body {
   padding: 15px;
   background-color: #333;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   font-weight: 700;
   font-size: 20px;
+  padding-left: 40px;
+}
+
+.navbar h1 {
+  color: #eee;
+  font-size: 40px;
+}
+
+.navbar-section {
+  display: flex;
+  justify-content: space-around;
 }
 
 .counter {
