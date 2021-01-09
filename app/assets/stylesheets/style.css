@@ -47,6 +47,7 @@ body {
 
 .timer {
   padding: 10px;
+  width: 70px;
   border-radius: 5px;
   background-color: #fff;
   color: #333;
