@@ -5,6 +5,5 @@ Rails.application.routes.draw do
   get 'maps/checktogepi', to: 'maps#checktogepi'
   get 'maps/checkmagikarp', to: 'maps#checkmagikarp'
   get 'maps/checkporygon', to: 'maps#checkporygon'
-  get 'players', to: 'players#index'
   post 'players', to: 'players#create'
 end
