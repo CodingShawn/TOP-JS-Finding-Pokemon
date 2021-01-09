@@ -64,20 +64,23 @@ body {
   top: 15%;
 }
 
-.congrats-wrapper {
+.center-popup {
   position: relative;
   width: fit-content;
-  text-align: center;
   left: -50%;
-  grid-template-columns: repeat(2, 200px);
   background-color: rgba(220, 220, 220, 0.7);
   border-radius: 5px;
-  display: flex;
-  flex-direction: column;
   font-weight: 700;
   font-size: 24px;
-  line-height: 1.75em;
   padding: 10px;
+}
+
+.congrats-wrapper {
+  grid-template-columns: repeat(2, 200px); 
+  display: flex;
+  flex-direction: column;
+  line-height: 1.75em;
+  text-align: center;
 }
 
 .congrats-wrapper > * {
@@ -125,4 +128,27 @@ form button {
 
 .top-scorer div {
   font-family: 'Roboto', sans-serif;  
+}
+
+.instructions {
+  width: 200px;
+  height: 210px;
+  padding: 20px;
+  line-height: 1.75rem;
+  transform: translate(-100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.instructions h2 {
+  margin-bottom: 10px;
+}
+
+.instructions-btn {
+  height: 75px;
+  width: 150px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 5px;
 }

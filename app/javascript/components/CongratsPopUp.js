@@ -52,7 +52,7 @@ function CongratsPopUp(props) {
 
   return (
     <div className="centering-wrapper">
-      <div className="congrats-wrapper">
+      <div className="congrats-wrapper center-popup">
         <h1>You have found all the lost Pokemon!</h1>
         <div>Time Taken: {formatTime(props.currentTime)}</div>
         {!topScorers && (
