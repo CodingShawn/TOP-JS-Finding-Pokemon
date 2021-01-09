@@ -1,24 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Odin Project - to create a Where's Waldo (or Pokemon) App using Rails for the backend and React for the frontend.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Project Features
+Players have to find the missing Pokemon. Scores are assigned based on time taken for player to find all 3 Pokemon. Players can submit their scores tagged to their username and top 5 fastest players will be displayed in a "Hall of Fame".
