@@ -62,7 +62,7 @@ body {
 .centering-wrapper {
   position: fixed;
   left: 50%;
-  top: 15%;
+  top: 20%;
 }
 
 .center-popup {
@@ -127,7 +127,7 @@ form button {
   padding: 5px;
 }
 
-.top-scorer div {
+.top-scorer div:first-child {
   word-spacing: 10px; 
   overflow: hidden;
   max-width: 250px;
