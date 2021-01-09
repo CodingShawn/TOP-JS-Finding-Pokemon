@@ -101,7 +101,7 @@ body {
   margin: 20px;
   line-height: 20px;
   font-size: 20px;
-  padding: 5px;
+  padding: 5px 5px 5px 10px;
   border-radius: 5px;
 }
 
@@ -129,6 +129,9 @@ form button {
 
 .top-scorer div {
   word-spacing: 10px; 
+  overflow: hidden;
+  max-width: 250px;
+  white-space: nowrap;
 }
 
 .instructions {
