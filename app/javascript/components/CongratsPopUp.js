@@ -56,7 +56,7 @@ function CongratsPopUp(props) {
         <h1>You have found all the lost Pokemon!</h1>
         <div>Time Taken: {formatTime(props.currentTime)}</div>
         {!topScorers && (
-          <form className="score-form">
+          <form className="score-form"  onSubmit={submitScore}>
             <label>
               Enter your name to the Hall of Fame:
               <br />
@@ -67,7 +67,7 @@ function CongratsPopUp(props) {
                 required
               ></input>
             </label>
-            <button onClick={submitScore}>Enter</button>
+            <button>Enter</button>
           </form>
         )}
         <TopScorersReceived />
