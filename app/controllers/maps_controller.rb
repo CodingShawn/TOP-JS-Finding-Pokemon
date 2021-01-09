@@ -1,7 +1,7 @@
 class MapsController < ApplicationController
-  TOGEPICOORDS = [9, 95]
-  MAGIKARPCOORDS = [87.8, 39.6]
-  PORYGONCOORDS = [56.6, 51.8]
+  TOGEPICOORDS = [10.9, 94.3]
+  MAGIKARPCOORDS = [89.7, 38]
+  PORYGONCOORDS = [58.5, 50.6]
 
   def index
   end 

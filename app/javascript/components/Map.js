@@ -48,7 +48,8 @@ let Map = (props) => {
       let mapWidth = mapImage.width;
       let mapHeight = mapImage.height;
       let xPercent = (targetBoxCoords[0] / mapWidth) * 100;
-      let yPercent = (targetBoxCoords[1] / mapHeight) * 100;
+      //To minus off height of navbar(70)
+      let yPercent = ((targetBoxCoords[1] - 70) / mapHeight) * 100;
       let urlRequest = `/maps/check${pokemon}?x=${xPercent}&y=${yPercent}`;
       sendCheckRequest(urlRequest, pokemon);
     }
