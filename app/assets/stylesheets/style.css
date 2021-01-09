@@ -52,6 +52,7 @@ body {
   background-color: #fff;
   color: #333;
   margin-right: 30px;
+  text-align: center;
 }
 
 .hidden {
@@ -127,7 +128,7 @@ form button {
 }
 
 .top-scorer div {
-  font-family: 'Roboto', sans-serif;  
+  word-spacing: 10px; 
 }
 
 .instructions {
